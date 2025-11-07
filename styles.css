@@ -1,126 +1,70 @@
-/* styles.css – kadaver_macabre edition */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=UnifrakturCook:wght@700&display=swap');
-
-:root{
-  --fondo: #0a0a0a;
-  --tinta: #c9c1b1;
-  --sangre: #8a0303;
-  --humo: #4d4d4d;
-  --papel: #1b1b1b;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4') no-repeat center center/cover;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: #ffffff;
 }
 
-body{
-  background:var(--fondo);
-  color:var(--tinta);
-  font-family:'Crimson Text',serif;
-  line-height:1.7;
-  letter-spacing:.4px;
-  background-image:
-    radial-gradient(circle at 20% 50%, rgba(138,3,3,.06) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(77,77,77,.05) 0%, transparent 50%);
-  min-height:100vh;
+header {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  text-align: center;
 }
 
-/* Cabecera como carta arrancada de un cuaderno */
-header{
-  background:var(--papel);
-  border-left:4px solid var(--sangre);
-  padding:2rem 1.5rem 1.5rem 2rem;
-  margin:2rem 1rem 0;
-  box-shadow:0 0 20px rgba(0,0,0,.8);
-  position:relative;
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-header::before{
-  content:'';
-  position:absolute;
-  top:0; left:0;
-  width:100%; height:4px;
-  background:linear-gradient(90deg, var(--sangre), transparent);
+nav a {
+  color: #ffffff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-h1{
-  font-family:'UnifrakturCook',cursive;
-  font-size:2.8rem;
-  color:var(--sangre);
-  text-shadow:0 0 8px rgba(138,3,3,.6);
-  margin-bottom:1rem;
+nav a:hover {
+  color: #ff00ff;
 }
 
-nav{
-  display:flex;
-  flex-direction:column;
-  gap:.6rem;
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  color: #222222;
+  animation: fadeIn 1.2s ease-in;
 }
 
-nav a{
-  color:var(--tinta);
-  text-decoration:none;
-  font-style:italic;
-  border-bottom:1px dashed var(--humo);
-  align-self:flex-start;
-  transition:all .3s ease;
+section {
+  margin-bottom: 2rem;
 }
 
-nav a:hover{
-  color:var(--sangre);
-  border-bottom-style:solid;
-  text-shadow:0 0 4px var(--sangre);
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  margin-top: 2rem;
 }
 
-/* Secciones como páginas rotas */
-main{
-  padding:2rem 1rem;
-  max-width:800px;
-  margin:auto;
-}
-
-section{
-  background:var(--papel);
-  margin-bottom:2rem;
-  padding:2rem;
-  border-left:2px solid var(--humo);
-  box-shadow:0 0 15px rgba(0,0,0,.7);
-  position:relative;
-}
-
-section h2{
-  font-family:'UnifrakturCook',cursive;
-  font-size:1.8rem;
-  color:var(--sangre);
-  margin-bottom:1rem;
-}
-
-section p{
-  text-align:justify;
-  hyphens:auto;
-}
-
-/* Pie de tumba */
-footer{
-  text-align:center;
-  padding:2rem 1rem 3rem;
-  font-size:.9rem;
-  color:var(--humo);
-  letter-spacing:2px;
-  text-transform:uppercase;
-  opacity:.5;
-}
-
-/* Scrollbar oscura */
-::-webkit-scrollbar{
-  width:8px;
-}
-::-webkit-scrollbar-track{
-  background:var(--fondo);
-}
-::-webkit-scrollbar-thumb{
-  background:var(--sangre);
-  border-radius:4px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
